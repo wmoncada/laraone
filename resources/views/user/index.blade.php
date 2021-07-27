@@ -13,6 +13,14 @@
             <div class="col-sm-8 mx-auto">
                 <div class="card border-0 shadow">
                     <div class="card-body">
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                        - {{ $error }} <br>
+                        @endforeach
+                    </div>
+                    @endif
+
                         <form action="{{ route('users.store') }}" method="POST">
                             <div class="row">
                                 <div class="col-sm-3">
